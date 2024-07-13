@@ -1,0 +1,16 @@
+[
+  "couette_coupled/test_couette.py::test_newtest[0.2]",
+  "couette_coupled/test_couette.py::test_newtest[0.5]",
+  "couette_coupled/test_couette.py::test_newtest[1.0]",
+  "couette_coupled/test_couette.py::test_newtest[2.0]",
+  "granular/column/test_column.py::test_pressure[0.1-DiFelice]",
+  "granular/column/test_column.py::test_pressure[0.1-Ergun]",
+  "granular/column/test_column.py::test_pressure[0.2-DiFelice]",
+  "granular/column/test_column.py::test_pressure[0.2-Ergun]",
+  "granular/column/test_column.py::test_pressure[0.3-DiFelice]",
+  "granular/column/test_column.py::test_pressure[0.3-Ergun]",
+  "granular/column/test_column.py::test_pressure[0.4-DiFelice]",
+  "granular/column/test_column.py::test_pressure[0.4-Ergun]",
+  "granular/column/test_column.py::test_pressure[0.5-DiFelice]",
+  "granular/column/test_column.py::test_pressure[0.5-Ergun]"
+]
