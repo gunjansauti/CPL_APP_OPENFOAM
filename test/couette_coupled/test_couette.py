@@ -47,7 +47,7 @@ def test_newtest(wallvel):
 
     #Clean previous result, generate grid and decompose for parallel run
     with cd (TEST_DIR+"/"+inputfile):
-        sp.check_output("python clean.py -f", shell=True)
+        #sp.check_output("python clean.py -f", shell=True)
         sp.check_output("blockMesh", shell=True)
 
     #Setup Changes

@@ -1,7 +1,7 @@
 
 EXE_INC = \
     $(MPI_ARCH_INC) \
-    -I$(CPL_INCLUDE_PATH)/cpl \
+    -I$(CPL_INCLUDE_PATH) \
     -I$(LIB_SRC)/finiteVolume/lnInclude \
     -I$(LIB_SRC)/meshTools/lnInclude \
     -I$(FOAM_CPL_APP_SRC)/CPLPstream/lnInclude 

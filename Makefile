@@ -2,24 +2,21 @@ OpenFOAM_DIR=`cat CODE_INST_DIR`
 OpenFOAM_SRC_DIR=$(OpenFOAM_SRC_DIR)/src
 OpenFOAM_ETC_DIR=$(OpenFOAM_ETC_DIR)/etc
 
-#ifneq (,$(findstring 3.0.1,$(OpenFOAM_DIR)))
-#	echo "3.0.1"
-#ln -s src/CPLPstream_3.0.1 src/CPLPstream 
-#else ifneq (,$(findstring 2106,$(OpenFOAM_DIR)))
-#	echo "2106"
-#ln -s src/CPLPstream_v2106 src/CPLPstream 
-#else ifneq (,$(findstring 2112,$(OpenFOAM_DIR)))
-#	echo "2112"
-#ln -s src/CPLPstream_v2112 src/CPLPstream 
-#else
-#	echo "OpenFOAM version not known"
-#endif
+# ifneq (,$(findstring 3.0.1,$(OpenFOAM_DIR)))
+	# echo "3.0.1"
+# ln -s src/CPLPstream_3.0.1 src/CPLPstream 
+# else ifneq (,$(findstring 2106,$(OpenFOAM_DIR)))
+	# echo "2106"
+# ln -s src/CPLPstream_v2106 src/CPLPstream 
+# else ifneq (,$(findstring 2112,$(OpenFOAM_DIR)))
+	# echo "2112"
+# ln -s src/CPLPstream_v2112 src/CPLPstream 
+# else
+	# echo "OpenFOAM version not known"
+# endif
 
 .PHONY: all test clean clean-test pstream socket cplicofoam cplinterfoam #cplsedifoam cplcfddemfoam
-all: cpltestfoam cpltestsocketfoam cplicofoam cplinterfoam #cplsedifoam cplcfddemfoam
-
-
-
+all: cpltestfoam cpltestsocketfoam cplicofoam cplcfddemfoam cplsedifoam cplinterfoam  
 
 pstream:
 	@wmake libso src/CPLPstream
@@ -67,6 +64,9 @@ clean:
 
 	rm -rf bin
 	rm -rf lib
+	
+	# mkdir lib 
+	# cp ./libPstream.so ./lib/
 
 clean-test:
 	cd test/stressC-P/debug && ./clean.sh
@@ -82,9 +82,9 @@ test-fcc_dummy:
 	pytest -sv ./examples/fcc_dummy
 
 test-couette:
-	cd test/pytest_example/coupled_to_pytest && ./run.sh CPLSediFOAM
-	cd test/pytest_example/coupled_to_pytest && ./run.sh CPLCFDDEMFoam
-	cd test/pytest_example/pytest_runs_subprocess && pytest -v test_couette.py
+	#cd test/pytest_example/coupled_to_pytest && ./run.sh CPLSediFOAM
+	#cd test/pytest_example/coupled_to_pytest && ./run.sh CPLCFDDEMFoam
+	#cd test/pytest_example/pytest_runs_subprocess && pytest -v test_couette.py
 	cd test/couette_coupled && pytest -v test_couette.py
 	cd test/couette_coupled && pytest -vs test_couette_parallel.py
 

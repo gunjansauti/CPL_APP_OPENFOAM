@@ -2,7 +2,7 @@
 EXE_INC = \
     -Wno-old-style-cast \
     $(MPI_ARCH_INC) \
-    -I$(CPL_INCLUDE_PATH)/cpl \
+    -I$(CPL_INCLUDE_PATH)/ \
     -I$(LIB_SRC)/finiteVolume/lnInclude \
     -I$(LIB_SRC)/mesh/blockMesh/lnInclude \
     -I$(LIB_SRC)/meshTools/lnInclude \

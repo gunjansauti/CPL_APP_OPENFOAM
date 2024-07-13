@@ -40,26 +40,30 @@ Description
 int main(int argc, char *argv[])
 {
 
-    //Define variables
-    bool cflag;
+    //Define variables 
+	bool cflag;
     int CFD_realm = 1;
     MPI_Comm CFD_COMM, CART_COMM;
     CPL::ndArray<double> send_array, recv_array;
 
     int flag = 0;
     int ierr = MPI_Initialized(&flag);
-
     Foam::Info << "MPI_Initialized(&flag) " << flag << Foam::endl;
     if (flag == 0)
-		MPI_Init(&argc, &argv);
-
+	{
+		MPI_Init(&argc, &argv);				
+	}
     //Initialise CPL library
     CPL::init(CFD_realm, CFD_COMM); 
 
     //If you want to use shared MPI_COMM_WORLD, this line is set
     Info<< "\nSetting CPLRealmComm\n" << endl;
 	Foam::PstreamGlobals::CPLRealmComm = CFD_COMM;
-
+	
+	int nprocs; int rank; 
+	MPI_Comm_size(CFD_COMM, &nprocs);   
+	MPI_Comm_rank(CFD_COMM, &rank);
+	
     #include "setRootCase.H"
     #include "createTime.H"
     #include "createMesh.H"
@@ -71,6 +75,7 @@ int main(int argc, char *argv[])
     // Initial communication to initialize domains
     int npxyz[3] = {1, 1, 1}; int periods[3] = {1, 1, 1};
     MPI_Cart_create(CFD_COMM, 3, npxyz, periods, 1, &CART_COMM);
+	
 
     double xyzL[3] = {1.0, 1.0, 1.0}; double xyz_orig[3] = {0.0, 0.0, 0.0};
     int ncxyz[3] = {32, 32, 32}; 
@@ -155,9 +160,9 @@ int main(int argc, char *argv[])
         time += 1;
     }
     Info<< "End\n" << endl;
+	
 	CPL::finalize(); // uncomment if CPL is installed
-
-    return 0;
+	MPI_Finalize();    
 }
 
 

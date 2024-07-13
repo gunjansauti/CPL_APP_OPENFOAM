@@ -7,9 +7,9 @@
     );
 
 
-    surfaceScalarField* phiaPtr;
+    surfaceScalarField* phiaPtr = nullptr;
 
-    if (phiaHeader.headerOk())
+    if (phiaHeader.typeHeaderOk<surfaceScalarField>(true))
     {
         Info<< "Reading face flux field phia\n" << endl;
 

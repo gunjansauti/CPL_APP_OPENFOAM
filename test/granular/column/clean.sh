@@ -8,6 +8,7 @@ cd ../
 # Clean CFD
 cd openfoam/
 rm -rf ../log.openfoam processor*/ constant/polyMesh/{boundary,faces,neighbour,owner,points}
+rm -rf  0.0*
 cd ../
 
 # Clean results

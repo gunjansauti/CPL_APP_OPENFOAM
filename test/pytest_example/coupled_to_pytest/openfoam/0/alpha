@@ -30,6 +30,12 @@ boundaryField
 		type zeroGradient;
 	}
 	
+	CPLReceiveMD
+	{
+		type fixedValue;
+		value uniform 0;
+	}
+	
 	streamwiseIn
 	{
 		type cyclic;

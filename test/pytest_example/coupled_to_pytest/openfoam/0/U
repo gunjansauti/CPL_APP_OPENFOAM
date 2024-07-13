@@ -23,12 +23,20 @@ boundaryField
 	top
 	{
 		type calculated;
+		value uniform (0 0 0);
 	}
 	
 	bottom
 	{
 		type calculated;
+		value uniform (0 0 0);
 	}
+	
+	CPLReceiveMD
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
 	
 	streamwiseIn
 	{

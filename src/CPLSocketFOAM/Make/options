@@ -11,7 +11,7 @@ EXE_INC = \
     -I$(LIB_SRC)/meshTools/lnInclude \
     -I$(LIB_SRC)/fileFormats/lnInclude/ \
     $(MPI_ARCH_INC) \
-    -I$(CPL_INCLUDE_PATH)/cpl
+    -I$(CPL_INCLUDE_PATH)
 
 
 LIB_LIBS = \

@@ -1,6 +1,6 @@
 EXE_INC = \
     $(MPI_ARCH_INC) \
-    -I$(CPL_INCLUDE_PATH)/cpl \
+    -I$(CPL_INCLUDE_PATH)/ \
     -IVoF \
     -I$(LIB_SRC)/transportModels/twoPhaseMixture/lnInclude \
     -I$(LIB_SRC)/transportModels \

@@ -3,6 +3,7 @@ CPP_DIRECTIVE = -std=c++11 \
 EXE_INC = \
     $(CPP_DIRECTIVE) \
     -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/openFOAM/lnInclude \
     -I$(LIB_SRC)/meshTools/lnInclude \
     -I$(CONDA_PREFIX)/include/cpl \
     $(MPI_ARCH_INC) \
@@ -15,4 +16,5 @@ EXE_LIBS = \
     -L$(CPL_LIBRARY_PATH) -Wl,-rpath=$(CPL_LIBRARY_PATH) \
     -lfiniteVolume \
     -lblockMesh \
+    -lOpenFOAM \
     -lCPLSocketFOAM

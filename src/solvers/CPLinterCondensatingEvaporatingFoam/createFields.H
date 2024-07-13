@@ -140,7 +140,7 @@ mesh.setFluxRequired(p_rgh.name());
 mesh.setFluxRequired(alpha1.name());
 
 // MULES compressed flux is registered in case scalarTransport FO needs it.
-surfaceScalarField alphaPhiUn
+//surfaceScalarField alphaPhiUn
 (
     IOobject
     (
@@ -153,6 +153,7 @@ surfaceScalarField alphaPhiUn
     mesh,
     dimensionedScalar(phi.dimensions(), Zero)
 );
+
 
 #include "createMRF.H"
 #include "createFvOptions.H"

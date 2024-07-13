@@ -110,6 +110,7 @@ int main(int argc, char *argv[])
     #include "createTime.H"
     #include "createMesh.H"
     #include "readEnvironmentalProperties.H"
+	#include "readGravitationalAcceleration.H"
     #include "createFields.H"
     #include "readPISO.H"
     #include "initContinuityErrs.H"

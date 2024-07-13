@@ -4,7 +4,7 @@ from mpi4py import MPI
 from cplpy import CPL
 
 # Add python scripts to path and import required classes
-sys.path.append('../python_scripts/')
+sys.path.append('../cfd-dem-scripts/')
 from OpenFOAM_Input import OpenFOAM_Input
 from DragForce import DragForce, Stokes, DiFelice, Ergun
 

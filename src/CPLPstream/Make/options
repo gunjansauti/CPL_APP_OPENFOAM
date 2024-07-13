@@ -1,0 +1,10 @@
+include $(GENERAL_RULES)/mpi-rules
+
+EXE_INC  = $(PFLAGS) $(PINC) $(c++LESSWARN) -I$(CPL_INCLUDE_PATH)
+
+LIB_LIBS = $(PLIBS) 
+
+/* Project lib dependencies */
+PROJECT_LIBS = -L$(FOAM_LIBBIN) -L$(CPL_LIBRARY_PATH) -lOpenFOAM
+
+EXE_LIBBIN = $(FOAM_CPL_APP_LIBBIN)

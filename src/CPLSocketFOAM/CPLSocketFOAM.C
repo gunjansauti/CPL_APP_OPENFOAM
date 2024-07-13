@@ -130,8 +130,8 @@ void CPLSocketFOAM::initCFD(const Foam::Time &runTime, const Foam::fvMesh &mesh)
     } 
     int nsteps = nint((et-st)/dt_cfd);
 
-    Foam::IOdictionary blockMeshDict(Foam::IOobject ("polyMesh/blockMeshDict", 
-									 runTime.time().constant(), runTime,
+    Foam::IOdictionary blockMeshDict(Foam::IOobject ("blockMeshDict", 
+									 runTime.time().system(), runTime,
                         			 IOobject::MUST_READ, 
 									 IOobject::NO_WRITE, false));
 
@@ -156,7 +156,9 @@ void CPLSocketFOAM::initCFD(const Foam::Time &runTime, const Foam::fvMesh &mesh)
 			   " Aborting."
 			<< exit(FatalError);
 	}
-    //Foam::dictionary boundary = blockMeshDict.subDict("boundary");
+    
+	
+	//Foam::dictionary boundary = blockMeshDict.subDict("boundary");
     //Foam::dictionary CPLReceiveMD = boundary.subDict("CPLReceiveMD");
     //CPLReceiveMD.readIfPresent("interp_BC");
 

@@ -1,0 +1,4 @@
+SOURCE = \
+CPLSocketFOAM.C \
+
+# sources

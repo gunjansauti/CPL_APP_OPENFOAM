@@ -93,6 +93,7 @@ int main(int argc, char *argv[])
     #include "createTime.H"
     #include "createMesh.H"
     #include "readEnvironmentalProperties.H"
+	#include "readGravitationalAcceleration.H"
     #include "createFields.H"
     #include "readPISO.H"
     #include "initContinuityErrs.H"
@@ -173,8 +174,19 @@ int main(int argc, char *argv[])
                                          + rUbAf*(g & mesh.Sf());  
             forAll(p.boundaryField(), patchi)
             {
-                if (isA<zeroGradientFvPatchScalarField>(p.boundaryField()[patchi]))
-                    phiDragb.boundaryField()[patchi] = 0.0;
+                if (isA<zeroGradientFvPatchScalarField>(p.boundaryField()[patchi]))  
+				{
+					// Access the boundary field patch for phiDragb
+					//fvsPatchScalarField& patchField = phiDragb.boundaryField()[patchi];
+					fvsPatchScalarField& patchField = const_cast<fvsPatchScalarField&>(phiDragb.boundaryField()[patchi]);
+
+					forAll(patchField, facei)
+					{
+						patchField[facei] = 0.0;
+					}
+					// Ensure the changes are evaluated and applied
+					patchField.evaluate();					
+				}
             }
             Ua.correctBoundaryConditions();
 

@@ -23,27 +23,28 @@ for f in dirlist:
             deletelist.append(f)
 
 keeplist = [i for i in dirlist if i not in deletelist]
+for f in deletelist:
+    sh.rmtree(f)
 
+# print('Keeping the following files:')
+# print(keeplist)
 
-print('Keeping the following files:')
-print(keeplist)
+# print('Deleting the following files: ')
+# print(deletelist)
 
-print('Deleting the following files: ')
-print(deletelist)
+# import sys
+# try:
+    # arg1 = sys.argv[1]
+# except IndexError:
+    # arg1 = None
 
-import sys
-try:
-    arg1 = sys.argv[1]
-except IndexError:
-    arg1 = None
+# if arg1 == "-f": 
+    # answer = 'y'
+# else:
+    # answer = input('Proceed? [y]/n: ')
 
-if arg1 == "-f": 
-    answer = 'y'
-else:
-    answer = input('Proceed? [y]/n: ')
-
-if (answer == 'y' or answer == 'Y'):
-    for f in deletelist:
-        sh.rmtree(f)
-else:
-    quit('Cancelled deletion.')
+# if (answer == 'y' or answer == 'Y'):
+    # for f in deletelist:
+        # sh.rmtree(f)
+# else:
+    # quit('Cancelled deletion.')

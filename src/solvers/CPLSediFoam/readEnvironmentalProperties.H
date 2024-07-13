@@ -12,7 +12,7 @@ IOdictionary environmentalProperties
     )
 );
 
-dimensionedVector g(environmentalProperties.lookup("g"));
+//dimensionedVector g(environmentalProperties.lookup("g"));
 
 // default max alpha if not defined in dictionary
 //bool coupled;

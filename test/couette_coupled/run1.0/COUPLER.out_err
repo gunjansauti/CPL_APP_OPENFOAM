@@ -1,0 +1,2 @@
+/usr/lib/python3.10/subprocess.py:966: RuntimeWarning: line buffering (buffering=1) isn't supported in binary mode, the default buffer size will be used
+  self.stderr = io.open(errread, 'rb', bufsize)

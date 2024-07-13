@@ -23,10 +23,12 @@ boundaryField
     inlet
     {
         type calculated;
+		value uniform (0 0 0);
     }
     outlet
     {
         type calculated;
+		value uniform (0 0 0);
     }
     
 }
