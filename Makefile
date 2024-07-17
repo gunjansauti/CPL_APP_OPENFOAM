@@ -1,6 +1,6 @@
 OpenFOAM_DIR=`cat CODE_INST_DIR`
-OpenFOAM_SRC_DIR=$(OpenFOAM_SRC_DIR)/src
-OpenFOAM_ETC_DIR=$(OpenFOAM_ETC_DIR)/etc
+OpenFOAM_SRC_DIR=$(OpenFOAM_DIR)/src
+OpenFOAM_ETC_DIR=$(OpenFOAM_DIR)/etc
 
 # ifneq (,$(findstring 3.0.1,$(OpenFOAM_DIR)))
 	# echo "3.0.1"
